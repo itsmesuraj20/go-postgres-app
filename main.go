@@ -27,17 +27,17 @@ func main() {
 	}
 	defer db.Close()
 
-	// // Create table
-	// createTable := `
-	// CREATE TABLE IF NOT EXISTS users (
-	// 	id SERIAL PRIMARY KEY,
-	// 	name TEXT NOT NULL,
-	// 	age INT NOT NULL
-	// );`
-	// _, err = db.Exec(createTable)
-	// if err != nil {
-	// 	log.Fatal(err)
-	// }
+	// Create table
+	createTable := `
+	CREATE TABLE IF NOT EXISTS users (
+		id SERIAL PRIMARY KEY,
+		name TEXT NOT NULL,
+		age INT NOT NULL
+	);`
+	_, err = db.Exec(createTable)
+	if err != nil {
+		log.Fatal(err)
+	}
 
 	// // Insert data
 	// insertUser := `INSERT INTO users (name, age) VALUES ($1, $2) RETURNING id`
