@@ -39,15 +39,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-	// // Insert data
-	// insertUser := `INSERT INTO users (name, age) VALUES ($1, $2) RETURNING id`
-	// var userID int
-	// err = db.QueryRow(insertUser, "John Doe", 30).Scan(&userID)
-	// if err != nil {
-	// 	log.Fatal(err)
-	// }
+	// Insert data
+	insertUser := `INSERT INTO users (name, age) VALUES ($1, $2) RETURNING id`
+	var userID int
+	err = db.QueryRow(insertUser, "John Doe", 30).Scan(&userID)
+	if err != nil {
+		log.Fatal(err)
+	}
 
-	// fmt.Printf("Inserted user with ID %d\n", userID)
+	fmt.Printf("Inserted user with ID %d\n", userID)
 
 	fmt.Printf("%T", psqlInfo)
 }
