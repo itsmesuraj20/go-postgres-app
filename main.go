@@ -50,4 +50,6 @@ func main() {
 	fmt.Printf("Inserted user with ID %d\n", userID)
 
 	fmt.Printf("%T", psqlInfo)
+
+	//CRUD operations
 }
